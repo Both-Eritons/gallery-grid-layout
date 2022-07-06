@@ -1,0 +1,72 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "fonte";
+    src: url("https://lolstatic-a.akamaihd.net/accounts-fonts/FFMarkW05-Heavy.1de8fa6eb6e45628ebb3edd635462180.woff2");
+}
+
+.container__gallery {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 300px;
+    padding: 5px;
+    grid-gap: 5px;
+}
+
+.item__gallery {
+    position: relative;
+}
+
+.item__gallery .img__gallery {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item__gallery .title__gallery {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    padding: 10px;
+    font-size: 16pt;
+    font-family: "fonte";
+}
+
+.h__1 {
+    grid-row: span 1;
+    /*QUER DIZER QUE EU QUERO QUE PREENCHA 1 LINHA DO MEU GRID*/
+}
+
+.h__2 {
+    grid-row: span 2;
+    /* O MESMO DO DE CIMA SÓ QUE 2*/
+}
+
+.w__1 {
+    grid-column: span 1;
+    /*O MESMO QUE O ROW SÓ QUE COLUNAS*/
+}
+
+.w__2 {
+    grid-column: span 2;
+}
+
+@media(max-width: 700px) {
+    .container__gallery {
+        grid-template-columns: repeat(1, 1fr);
+        grid-auto-rows: 50vh;
+    }
+    .h__2{
+        grid-row: span 1;
+    }
+    w__2{
+        grid-column: span 1;
+    }
+}
